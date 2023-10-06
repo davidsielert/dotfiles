@@ -1,11 +1,12 @@
 [user]
-        email = 456592+davidsielert@users.noreply.github.com
-        name = David Sielert
+email = 456592+davidsielert@users.noreply.github.com
+name = David Sielert
 
 [alias]
-    st = status
-    ci = commit
-    co = checkout
-    br = branch
-    unstage = reset HEAD --
-    last = log -1 HEAD
+st = status
+ci = commit
+co = checkout
+br = branch
+unstage = reset HEAD --
+last = log -1 HEAD
+a =  add .
