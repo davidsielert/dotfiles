@@ -1,2 +1,3 @@
 require("mirv")
-vim.opt.clipboard='unnamed'
+vim.opt.clipboard='unnamedplus'
+vim.opt.hlsearch=true

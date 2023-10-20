@@ -6,6 +6,16 @@ local plugins = {
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.3',
         dependencies = { {'nvim-lua/plenary.nvim'} },
+        config=function()
+              local ts = require('telescope')
+              ts.setup {
+                pickers = {
+                  find_files = {
+                    follow = true
+                  }
+                }
+              }
+        end,
         init=function()
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -123,7 +133,7 @@ local plugins = {
     'christoomey/vim-tmux-navigator',
     "zbirenbaum/copilot.lua",
     'nvim-lualine/lualine.nvim',
-    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+     {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
     {
         'mfussenegger/nvim-dap',
         init = function()
@@ -163,6 +173,15 @@ local plugins = {
         },
         cmd = { 'BreakpointToggle', 'Debug', 'DapREPL' },
     },
+    {
+        'ThePrimeagen/vim-be-good'
+    }, 
+    {
+        'lambdalisue/suda.vim'
+    },
+    {"brenoprata10/nvim-highlight-colors"},
+    {"RRethy/vim-hexokinase"}
+
 
 }
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

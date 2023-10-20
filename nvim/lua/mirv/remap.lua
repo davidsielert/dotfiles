@@ -32,6 +32,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<F2>", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>nff", "<cmd>NvimTreeFindFile<CR>")
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
@@ -40,6 +41,9 @@ vim.keymap.set("n","<leader>bp","<cmd>bprev<CR>")
 vim.keymap.set("n","<leader>1",function()
     require('bufferline').go_to_buffer(1, true)
 end)
+vim.keymap.set("n","^[[6;5~","<cmd>tabprev<CR>")
+vim.keymap.set("n","^[[5;5~","<cmd>tabnext<CR>")
+
 
 vim.keymap.set("n","<leader>1",function()
     require('bufferline').go_to_buffer(1, true)
