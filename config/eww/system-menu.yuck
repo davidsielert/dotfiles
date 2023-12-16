@@ -1,0 +1,120 @@
+(defwidget system-menu []
+  (box
+    :class "system-menu-box"
+    :space-evenly "false"
+    :orientation "v"
+    (box
+      :class "top-row"
+      :space-evenly false
+      (label
+        :class "time"
+        :text {clock_time})
+      (box
+        :class "date-box"
+        :space-evenly "false"
+        (label
+          :class "date"
+          :text {clock_date})))
+
+    
+    (box
+      :class "sliders"
+      :orientation "v"
+      (box
+        :class "volume-slider-box"
+        :space-evenly "false"
+        :orientation "h"
+        (button
+          :class "volume-icon"
+          :onclick "scripts/volume setmute"
+          "")
+        (scale
+          :class "volume-bar"
+          :value {volume_percent}
+          :tooltip "volume on ${volume_percent}%"
+          :onchange "scripts/volume setvol SINK {}"))
+      (box
+        :class "volume-slider-box"
+        :space-evenly "false"
+        :orientation "h"
+        (button
+          :class "volume-icon"
+          :onclick "scripts/volume setmute SOURCE"
+          "")
+        (scale
+          :class "volume-bar"
+          :value {mic_percent}
+          :tooltip "mic on ${mic_percent}%"
+          :onchange "scripts/volume setvol SOURCE {}"))
+           )
+
+    (box
+      :class "system-info-box"
+      :orientation "v"
+
+      ; cpu
+      (box
+        :class "sys-box"
+        :space-evenly "false"
+        :halign "start"
+        (circular-progress
+          :value "${EWW_CPU.avg}"
+          :class "sys-cpu"
+          :thickness "3"
+          (label
+            :text ""
+            :class "sys-icon-cpu"))
+        (box
+          :orientation "v"
+          :vexpand "false"
+          (label
+            :text "cpu"
+            :halign "start"
+            :class "sys-text-cpu")
+          (label
+            :text "${round(EWW_CPU.avg,2)}%"
+            :halign "start"
+            :class "sys-text-sub")
+          (label
+            :text "${EWW_CPU.cores[0].freq} MHz"
+            :halign "start"
+            :class "sys-text-sub")))
+
+      ; memory
+      (box
+        :class "sys-box"
+        :space-evenly "false"
+        :halign "start"
+        (circular-progress
+          :value {round(EWW_RAM.available_mem / EWW_RAM.total_mem)}
+          :class "sys-mem"
+          :thickness "3"
+          (label
+            :text ""
+            :class "sys-icon-mem"))
+        (box
+          :orientation "v"
+          (label
+            :text "memory"
+            :halign "start"
+            :class "sys-text-mem" )
+          (label
+            :text "${round((EWW_RAM.available_mem),0)} | ${round((EWW_RAM.total_mem / 1024),0)}"
+            :halign "start"
+            :class "sys-text-sub" )))
+
+       )))
+
+;; windows
+(defwindow system-menu
+  :stacking "fg" 
+  :windowtype "dock" 
+  :wm-ignore true 
+  :monitor "0"
+  :geometry (geometry
+    :x "0"
+    :y "0"
+    :width "0%"
+    :height "0%"
+    :anchor "right top")
+  (system-menu))

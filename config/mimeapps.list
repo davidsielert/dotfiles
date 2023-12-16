@@ -1,0 +1,30 @@
+[Default Applications]
+x-scheme-handler/notion=notion-app.desktop
+text/html=firefoxdeveloperedition.desktop
+x-scheme-handler/http=firefoxdeveloperedition.desktop
+x-scheme-handler/https=firefoxdeveloperedition.desktop
+x-scheme-handler/about=firefoxdeveloperedition.desktop
+x-scheme-handler/unknown=firefoxdeveloperedition.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-WVS7C2.desktop
+message/rfc822=userapp-Thunderbird-WVS7C2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-WVS7C2.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-EG85C2.desktop
+text/calendar=userapp-Thunderbird-EG85C2.desktop
+application/x-extension-ics=userapp-Thunderbird-EG85C2.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-EG85C2.desktop
+inode/directory=thunar.desktop
+image/svg+xml=org.gnome.Loupe.desktop
+application/yaml=userapp-kitty nvim-SKESE2.desktop
+image/gif=org.gnome.Loupe.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-WVS7C2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-WVS7C2.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-EG85C2.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-EG85C2.desktop;
+image/svg+xml=org.gnome.Loupe.desktop;
+application/yaml=userapp-kitty nvim-SKESE2.desktop;nvim.desktop;userapp-bash -c  nvim-J6SFE2.desktop;userapp-bash -c "nvim" %F"-UMSSE2.desktop;userapp-kitty bash -c nvim-247PE2.desktop;
+image/jpeg=gimp.desktop;org.gnome.Loupe.desktop;
+application/pdf=firefox.desktop;
+image/gif=org.gnome.Loupe.desktop;
