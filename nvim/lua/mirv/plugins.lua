@@ -9,6 +9,7 @@ local plugins = {
         config=function()
               local ts = require('telescope')
               ts.setup {
+                defaults = { file_ignore_patterns = {"node_modules"}},
                 pickers = {
                   find_files = {
                     follow = true
@@ -39,7 +40,7 @@ local plugins = {
         },
     },
 
-    { 'rose-pine/neovim', name = 'rose-pine' },
+    --{ 'rose-pine/neovim', name = 'rose-pine' },
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     "nvim-treesitter/playground",
     'nvim-lua/plenary.nvim',
@@ -180,7 +181,33 @@ local plugins = {
         'lambdalisue/suda.vim'
     },
     {"brenoprata10/nvim-highlight-colors"},
-    {"RRethy/vim-hexokinase"}
+    {"RRethy/vim-hexokinase"},
+    {"dracula/vim",
+    name = "dracula"
+    },
+    {
+    'stevearc/dressing.nvim',
+    opts = {},
+    },
+    {'ziontee113/icon-picker.nvim',
+    dependencies = {'stevearc/dressing.nvim'},
+    keys = {
+        {"<Leader><Leader>i", "<cmd>IconPickerNormal<cr>"},
+        {"<Leader><Leader>y", "<cmd>IconPickerYank<cr>"},
+        {"<C-i>", "<cmd>IconPickerInsert<cr>"},
+    },
+    config = function()
+    require("icon-picker").setup({
+      disable_legacy_commands = true
+    })
+  end,
+--    init = function()
+--        local opts = { noremap = true, silent = true }
+--        vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
+--        vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+--        vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
+--    end
+    }
 
 
 }

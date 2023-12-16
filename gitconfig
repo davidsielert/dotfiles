@@ -1,6 +1,7 @@
 [user]
 email = 456592+davidsielert@users.noreply.github.com
 name = David Sielert
+	signingkey = D4AA78DA4B0DDF7CF4ED89C4337D4D1E59AB341B
 
 [alias]
 st = status
@@ -10,3 +11,16 @@ br = branch
 unstage = reset HEAD --
 last = log -1 HEAD
 a =  add .
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[includeIf "hasconfig:remote.*.url:git@gitlab.mirv.ninja:davidsielert/**"]
+    path = "~/.gitconfig.gitlab"
+[includeIf "hasconfig:remote.*.url:git@gitlab.mirv.ninja:infrastructure/**"]
+    path = "~/.gitconfig.gitlab"
+
+[push]
+	autoSetupRemote = true
