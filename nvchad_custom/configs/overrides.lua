@@ -13,7 +13,7 @@ M.treesitter = {
     "lua",
     "hcl",
     "html",
-    "hypr",
+--    "hypr",
     "ini",
     "javascript",
     "json",

@@ -11,15 +11,15 @@ vim.filetype.add({
 		[".*/.*playbook.*.ya?ml"] = "yaml.ansible",
 		[".*/.*tasks.*/.*ya?ml"] = "yaml.ansible",
 		[".*/local.ya?ml"] = "yaml.ansible",
-    [".*/hypr/.*%.conf"] = "hypr"
+    --  [".*/hypr/.*%.conf"] = "hypr"
 	},
 })
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "hypr",
-  callback = function(event)
-    vim.bo[event.buf].commentstring = "# %s"
-  end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "hypr",
+--   callback = function(event)
+--     vim.bo[event.buf].commentstring = "# %s"
+--   end,
+-- })
 -- eol:↲
 -- set list lcs=trail:·,tab:»·
 vim.opt.listchars = { space = '·', tab = '»·', nbsp = '␣' }
